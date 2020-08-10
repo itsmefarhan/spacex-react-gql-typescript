@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import { LaunchListQuery } from "../../generated/graphql";
 import { Typography, Grid, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -45,19 +46,25 @@ const LaunchList: React.FC<Props> = ({ data }) => {
         <Grid item xs={10} sm={10}>
           <div className={classes.paperContainer}>
             {launches?.map((launch) => (
-              <Paper elevation={3} className={`${classes.paper} paper`} key={launch?.id}>
-                <img
-                  src={launch?.links?.mission_patch || DefaultImg}
-                  alt={`${launch?.mission_name}` || "spacex"}
-                  className={classes.img}
-                />
-                <Typography
-                  variant="body1"
-                  align="center"
-                  className={classes.typo}
-                >
-                  {launch?.mission_name} - {launch?.launch_year}
-                </Typography>
+              <Paper
+                elevation={3}
+                className={`${classes.paper} paper`}
+                key={launch?.id}
+              >
+                <Link to={`/${launch?.id}`}>
+                  <img
+                    src={launch?.links?.mission_patch || DefaultImg}
+                    alt={`${launch?.mission_name}` || "spacex"}
+                    className={classes.img}
+                  />
+                  <Typography
+                    variant="body1"
+                    align="center"
+                    className={classes.typo}
+                  >
+                    {launch?.mission_name} - {launch?.launch_year}
+                  </Typography>
+                </Link>
               </Paper>
             ))}
           </div>

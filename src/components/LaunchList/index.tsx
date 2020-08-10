@@ -1,7 +1,7 @@
 import React from "react";
 import { useLaunchListQuery } from "../../generated/graphql";
-import Spinner from "../Spinner";
 import LaunchList from "./LaunchList";
+import Spinner from "../Spinner";
 
 const LaunchListContainer = () => {
   const { data, loading, error } = useLaunchListQuery();
