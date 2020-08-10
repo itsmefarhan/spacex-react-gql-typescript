@@ -1,0 +1,17 @@
+/* Spinner.tsx */
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+/* App.tsx */
+.mainImg {
+  width: 100vw;
+  margin-bottom: 50px;
+}
+
+.paper:hover {
+  box-shadow: 3px 3px 5px 6px #ccc;
+  cursor: pointer;
+}
