@@ -4,6 +4,8 @@ import { LaunchListQuery } from "../../generated/graphql";
 import { Typography, Grid, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import DefaultImg from "../images/spacex.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const useStyles = makeStyles({
   heading: {
@@ -52,10 +54,11 @@ const LaunchList: React.FC<Props> = ({ data }) => {
                 key={launch?.id}
               >
                 <Link to={`/${launch?.id}`}>
-                  <img
+                  <LazyLoadImage
                     src={launch?.links?.mission_patch || DefaultImg}
                     alt={`${launch?.mission_name}` || "spacex"}
                     className={classes.img}
+                    effect="blur"
                   />
                   <Typography
                     variant="body1"

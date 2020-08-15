@@ -31,7 +31,7 @@ interface Props {
 
 const LaunchProfile: React.FC<Props> = ({ data }) => {
   const classes = useStyles();
-  console.log(data);
+  // console.log(data);
   if (!data.launch) return <h1>No Launch Available</h1>;
 
   return (
@@ -46,6 +46,7 @@ const LaunchProfile: React.FC<Props> = ({ data }) => {
         align="center"
         className={classes.heading}
         style={{ margin: "20px 0px" }}
+        data-testid='mission'
       >
         Mission: {data.launch.mission_name}
       </Typography>
