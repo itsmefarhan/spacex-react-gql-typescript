@@ -11,7 +11,7 @@ import "./App.css";
 
 // Apollo Client instance
 const client = new ApolloClient({
-  uri: "http://api.spacex.land/graphql/",
+  uri: "https://api.spacex.land/graphql/",
 });
 
 const App = () => {
